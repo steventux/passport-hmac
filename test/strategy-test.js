@@ -66,8 +66,7 @@ describe("HMAC Strategy", function() {
       }
       
       strategy.fail = function(info) {
-        console.log("This should never happen"); 
-        done(null, info);
+        throw new Error("This should never happen"); 
       }
       
       strategy.authenticate({ body: { apiKey : '1a2b3c4d5e'} });
